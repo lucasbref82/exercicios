@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Mostre quantos destes valores X estão dentro do intervalo [10,20] e quantos estão fora do intervalo, mostrando
  * essas informações conforme exemplo (use a palavra "in" para dentro do intervalo, e "out" para fora do intervalo).
  */
-public class Exercicios05 {
+public class Exercicio05 {
 
     public static void main(String[] args) {
 
