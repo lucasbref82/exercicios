@@ -2,7 +2,7 @@ package testesisolados;
 
 import java.util.regex.Pattern;
 
-public class TesteJava {
+public class TestarPadrao {
 
     private static final Pattern PATTERN = Pattern.compile("^S \\d+$");
 
