@@ -24,6 +24,7 @@ public class Exercicio02 {
             primeiroValor = sc.nextInt();
             segundoValor = sc.nextInt();
         }
+        sc.close();
     }
 
     private static void printaQuadrante(int primeiroValor, int segundoValor) {
