@@ -1,8 +1,9 @@
-package isolados;
+package testesisolados;
 
 import java.util.regex.Pattern;
 
 public class TesteJava {
+
     private static final Pattern PATTERN = Pattern.compile("^S \\d+$");
 
     public static void main(String[] args) {
