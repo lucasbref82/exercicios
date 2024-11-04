@@ -20,6 +20,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Dados do produto: " + this.nome + ", $ %.2f, " + this.estoque + " unidades, Total: $ %.2f%n";
+        return "Dados do produto: " + this.nome + ", $ "+ String.format("%.2f", this.valor) + ", " + this.estoque + " unidades, Total: $ " + String.format("%.2f", calculaTotal());
     }
 }

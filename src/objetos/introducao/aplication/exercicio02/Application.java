@@ -21,16 +21,15 @@ public class Application {
         System.out.print("Quantidade em estoque: ");
         produto.estoque = scanner.nextInt();
 
-        System.out.printf(produto.toString(), produto.valor, produto.calculaTotal());
+        System.out.println(produto);
 
-        System.out.print("Entre com um valor para adicionar ao estoque: ");
+        System.out.println("Entre com um valor para adicionar ao estoque: ");
         produto.adicionarEstoque(scanner.nextInt());
-        System.out.printf(produto.toString(), produto.valor, produto.calculaTotal());
+        System.out.println(produto);
 
-        System.out.print("Entre com um valor para ser removido do estoque: ");
+        System.out.println("Entre com um valor para ser removido do estoque: ");
         produto.removerEstoque(scanner.nextInt());
-        System.out.printf(produto.toString(), produto.valor, produto.calculaTotal());
-
+        System.out.println(produto);
         scanner.close();
     }
 }
