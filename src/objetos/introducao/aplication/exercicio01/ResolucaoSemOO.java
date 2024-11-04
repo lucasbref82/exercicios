@@ -1,4 +1,4 @@
-package objetos.introducao.aplication;
+package objetos.introducao.aplication.exercicio01;
 
 import java.util.Locale;
 import java.util.Scanner;

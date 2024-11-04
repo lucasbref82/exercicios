@@ -1,4 +1,4 @@
-package objetos.introducao.aplication.entities;
+package objetos.introducao.aplication.exercicio01.entities;
 
 public class Triangulo {
     public static double a;
