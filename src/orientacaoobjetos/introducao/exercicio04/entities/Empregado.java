@@ -1,6 +1,4 @@
-package objetos.introducao.aplication.exercicio04.entities;
-
-import java.lang.invoke.StringConcatFactory;
+package orientacaoobjetos.introducao.exercicio04.entities;
 
 public class Empregado {
     public String nome;

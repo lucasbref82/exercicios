@@ -1,4 +1,4 @@
-package objetos.introducao.aplication.exercicio03.entities;
+package orientacaoobjetos.introducao.exercicio03.entities;
 
 public class Retangulo {
     public Double largura;

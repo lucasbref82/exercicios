@@ -1,4 +1,4 @@
-package objetos.introducao.aplication.exercicio05.entities;
+package orientacaoobjetos.introducao.exercicio05.entities;
 
 import java.util.ArrayList;
 import java.util.List;

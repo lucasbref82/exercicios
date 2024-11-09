@@ -1,6 +1,6 @@
-package objetos.introducao.aplication.exercicio01;
+package orientacaoobjetos.introducao.exercicio01;
 
-import objetos.introducao.aplication.exercicio01.entities.Triangulo;
+import orientacaoobjetos.introducao.exercicio01.entities.Triangulo;
 
 import java.util.Locale;
 import java.util.Scanner;

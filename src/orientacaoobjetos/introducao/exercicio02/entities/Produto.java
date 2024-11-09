@@ -1,4 +1,4 @@
-package objetos.introducao.aplication.exercicio02.entities;
+package orientacaoobjetos.introducao.exercicio02.entities;
 
 public class Produto {
 

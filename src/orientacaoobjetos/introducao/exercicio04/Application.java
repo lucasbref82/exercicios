@@ -1,6 +1,6 @@
-package objetos.introducao.aplication.exercicio04;
+package orientacaoobjetos.introducao.exercicio04;
 
-import objetos.introducao.aplication.exercicio04.entities.Empregado;
+import orientacaoobjetos.introducao.exercicio04.entities.Empregado;
 
 import java.util.Locale;
 import java.util.Scanner;

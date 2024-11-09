@@ -1,6 +1,6 @@
-package objetos.introducao.aplication.exercicio02;
+package orientacaoobjetos.introducao.exercicio02;
 
-import objetos.introducao.aplication.exercicio02.entities.Produto;
+import orientacaoobjetos.introducao.exercicio02.entities.Produto;
 
 import java.util.Locale;
 import java.util.Scanner;
