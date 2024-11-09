@@ -29,5 +29,6 @@ public class Application {
 
         System.out.println("Preço médio: " + String.format("%.2f", somaPrecos / produtos.length));
 
+        sc.close();
     }
 }

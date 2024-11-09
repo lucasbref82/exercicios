@@ -23,5 +23,7 @@ public class Application {
         }
         System.out.println();
         System.out.println("MÉDIA DAS ALTURAS: " + String.format("%.2f", somaAltura / totalAlturas.length));
+
+        scanner.close();
     }
 }
