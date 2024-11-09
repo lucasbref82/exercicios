@@ -29,6 +29,7 @@ public class Application {
         System.out.println("Altura média: " + String.format("%.2f", pessoaService.calculaMediaAltura(pessoas)));
         System.out.println("Pessoas com menos de 16 anos: " + String.format("%.2f", pessoaService.calculaPorcentagem(pessoas)) + "%");
         pessoaService.imprimirPessoasMenores16(pessoas);
+        sc.close();
 
     }
 }
