@@ -12,7 +12,7 @@ public class Postagem {
     private Integer curtidas;
     List<Comentario> comentarios;
 
-    private DateTimeFormatter padrao = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    private final DateTimeFormatter padrao = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
     public Postagem(LocalDateTime momento, String titulo, String conteudo, Integer curtidas, List<Comentario> comentarios) {
         this.momento = momento;

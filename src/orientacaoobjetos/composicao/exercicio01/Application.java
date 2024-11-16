@@ -41,6 +41,7 @@ public class Application {
         System.out.println("Nome: " + trabalhador.getNome());
         System.out.println("Departamento: " + trabalhador.getDepartamento().getNome());
         System.out.println("Renda de " + mesAno + ": " + String.format("%.2f", trabalhador.getRenda(mesAno)));
+        scanner.close();
     }
 
 }
