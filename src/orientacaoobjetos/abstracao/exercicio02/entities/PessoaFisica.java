@@ -4,6 +4,10 @@ public class PessoaFisica extends Contribuinte {
 
     private Double gastosSaude;
 
+    public PessoaFisica() {
+        super();
+    }
+
     public PessoaFisica(String nome, Double rendaAnual, Double gastosSaude) {
         super(nome, rendaAnual);
         this.gastosSaude = gastosSaude;
