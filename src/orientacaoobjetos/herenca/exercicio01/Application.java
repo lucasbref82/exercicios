@@ -18,22 +18,20 @@ public class Application {
         for (int i = 1; i <= n; i++) {
             System.out.println("Dados do #"+ i + " funcionário: ");
             System.out.print("Terceirizado (s/n)? ");
-            boolean terceirizado = scanner.next().equals("s");
+            char terceirizado = scanner.next().charAt(0);
             System.out.print("Nome: ");
             String nome = scanner.next();
             System.out.print("Horas: ");
             Integer horas = scanner.nextInt();
             System.out.print("Valor por hora: ");
             Double valorPorHora = scanner.nextDouble();
-            if (terceirizado) {
+            if (terceirizado == 's') {
                 System.out.print("Custo adicional: ");
                 Double custoAdicional = scanner.nextDouble();
-                Funcionario funcionario = new FuncionarioTercerizado(nome, horas, valorPorHora, custoAdicional);
-                funcionarios.add(funcionario);
+                funcionarios.add(new FuncionarioTercerizado(nome, horas, valorPorHora, custoAdicional));
                 continue;
             }
-            Funcionario funcionario = new Funcionario(nome, horas, valorPorHora);
-            funcionarios.add(funcionario);
+            funcionarios.add( new Funcionario(nome, horas, valorPorHora));
         }
         System.out.println("PAGAMENTOS: ");
         for(Funcionario funcionario : funcionarios) {
