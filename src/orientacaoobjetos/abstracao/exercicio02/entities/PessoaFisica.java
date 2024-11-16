@@ -1,6 +1,6 @@
 package orientacaoobjetos.abstracao.exercicio02.entities;
 
-public class PessoaFisica extends Pessoa {
+public class PessoaFisica extends Contribuinte {
 
     private Double gastosSaude;
 

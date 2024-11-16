@@ -1,6 +1,6 @@
 package orientacaoobjetos.abstracao.exercicio02.entities;
 
-public class PessoaJuridica extends Pessoa{
+public class PessoaJuridica extends Contribuinte {
 
     private Integer quantidadeFuncionarios;
 

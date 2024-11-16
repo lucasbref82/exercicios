@@ -1,13 +1,13 @@
 package orientacaoobjetos.abstracao.exercicio02.entities;
 
-public abstract class Pessoa {
+public abstract class Contribuinte {
     protected String nome;
     protected Double rendaAnual;
 
-    protected Pessoa() {
+    protected Contribuinte() {
     }
 
-    protected Pessoa(String nome, Double rendaAnual) {
+    protected Contribuinte(String nome, Double rendaAnual) {
         this.nome = nome;
         this.rendaAnual = rendaAnual;
     }
