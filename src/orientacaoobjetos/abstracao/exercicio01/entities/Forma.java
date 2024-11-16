@@ -4,7 +4,14 @@ import orientacaoobjetos.abstracao.exercicio01.enums.Cor;
 
 public abstract class Forma {
 
-    protected Cor cor;
+    private Cor cor;
+
+    protected Forma() {
+    }
+
+    protected Forma(Cor cor) {
+        this.cor = cor;
+    }
 
     public Cor getCor() {
         return cor;

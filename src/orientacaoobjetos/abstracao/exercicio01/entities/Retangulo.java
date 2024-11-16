@@ -11,7 +11,7 @@ public class Retangulo extends Forma {
     }
 
     public Retangulo(Cor cor, Double largura, Double altura) {
-        super.cor = cor;
+        super(cor);
         this.largura = largura;
         this.altura = altura;
     }
