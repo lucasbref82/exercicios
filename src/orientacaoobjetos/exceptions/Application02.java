@@ -9,8 +9,7 @@ import java.util.Scanner;
 public class Application02 {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-        Scanner scanner = new Scanner(System.in);
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Entre com os dados da conta: ");
             System.out.print("Número: ");
             Integer numero = scanner.nextInt();
@@ -30,8 +29,6 @@ public class Application02 {
             System.out.println("Erro no saque: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Erro inesperado: " + e.getMessage());
-        } finally {
-            scanner.close();
         }
     }
 }

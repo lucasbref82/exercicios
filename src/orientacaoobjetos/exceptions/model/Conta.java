@@ -56,12 +56,16 @@ public class Conta {
     }
 
     public void saque(Double valor) {
+        validaSaque(valor);
+        this.saldo -= valor;
+    }
+
+    public void validaSaque(Double valor) {
         if (valor > saldo) {
             throw new ContaException("O valor do saque é maior que o saldo disponível.");
         }
         if (valor > limiteSaque) {
             throw new ContaException("O valor do saque excede o valor limite para saque.");
         }
-        this.saldo -= valor;
     }
 }
