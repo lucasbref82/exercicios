@@ -1,7 +1,6 @@
 package orientacaoobjetos.exceptions.service;
 
 import orientacaoobjetos.exceptions.constantes.Constantes;
-import orientacaoobjetos.exceptions.exceptions.ObjetoNuloException;
 import orientacaoobjetos.exceptions.exceptions.ReservaException;
 import orientacaoobjetos.exceptions.model.Reserva;
 import orientacaoobjetos.utilitarios.ExercicioUtils;
@@ -11,19 +10,16 @@ import java.time.temporal.ChronoUnit;
 
 public class ReservaService {
 
-    public Integer duracaoEmDias(Reserva reserva) throws ObjetoNuloException, ReservaException {
-        validaReserva(reserva);
+    public Integer duracaoEmDias(Reserva reserva) {
         return (int) ChronoUnit.DAYS.between(reserva.getChegada(), reserva.getSaida());
     }
 
-    public void atualizaDatas(Reserva reserva, LocalDate chegada, LocalDate saida) throws ObjetoNuloException, ReservaException {
-        validaReserva(reserva);
-        validaReserva(chegada, saida);
+    public void atualizaDatasReserva(Reserva reserva, LocalDate chegada, LocalDate saida) {
         reserva.setChegada(chegada);
         reserva.setSaida(saida);
     }
 
-    public void imprimeReserva(Reserva reserva) throws ObjetoNuloException, ReservaException {
+    public void imprimeReserva(Reserva reserva) {
         StringBuilder dadosReserva = new StringBuilder();
         dadosReserva.append("Quarto: ")
                 .append(reserva.getNumeroQuarto())
@@ -37,10 +33,7 @@ public class ReservaService {
         System.out.println(dadosReserva);
     }
 
-    public void validaReserva(Reserva reserva) throws ReservaException, ObjetoNuloException {
-        if (ExercicioUtils.nullabeObject(reserva)) {
-            throw new ObjetoNuloException("Uma reserva não pode ser nula !");
-        }
+    public void validaReserva(Reserva reserva) {
         if (reserva.getChegada() != null && reserva.getChegada().isBefore(LocalDate.now())) {
             throw new ReservaException(Constantes.DATA_CHEGADA_MENOR_DATA_ATUAL);
         }
@@ -49,18 +42,6 @@ public class ReservaService {
         }
         if (reserva.getSaida().isBefore(reserva.getChegada())) {
             throw new ReservaException(Constantes.DATA_SAIDA_MENOR_CHEGADA);
-        }
-    }
-
-    public void validaReserva(LocalDate chegada, LocalDate saida) throws ReservaException {
-        if (saida.isBefore(chegada)) {
-            throw new ReservaException(Constantes.DATA_SAIDA_MENOR_CHEGADA);
-        }
-        if (chegada.isBefore(LocalDate.now())) {
-            throw new ReservaException(Constantes.DATA_CHEGADA_MENOR_DATA_ATUAL);
-        }
-        if (saida.isBefore(LocalDate.now())) {
-            throw new ReservaException(Constantes.DATA_SAIDA_MENOR_DATA_ATUAL);
         }
     }
 }

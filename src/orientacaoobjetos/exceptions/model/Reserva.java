@@ -1,5 +1,8 @@
 package orientacaoobjetos.exceptions.model;
 
+import orientacaoobjetos.exceptions.constantes.Constantes;
+import orientacaoobjetos.exceptions.exceptions.ReservaException;
+
 import java.time.LocalDate;
 
 public class Reserva {
@@ -9,9 +12,13 @@ public class Reserva {
     private LocalDate saida;
 
     public Reserva() {
+
     }
 
     public Reserva(Integer numeroQuarto, LocalDate chegada, LocalDate saida) {
+        if (chegada.isAfter(saida)) {
+            throw new ReservaException(Constantes.DATA_SAIDA_MENOR_CHEGADA);
+        }
         this.numeroQuarto = numeroQuarto;
         this.chegada = chegada;
         this.saida = saida;

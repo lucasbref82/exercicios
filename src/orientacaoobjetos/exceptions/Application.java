@@ -15,37 +15,36 @@ public class Application {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Número do quarto: ");
-        Integer numeroQuarto = scanner.nextInt();
-        System.out.print("Data de chegada (DD/MM/YYYY): ");
-        LocalDate chegada = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
-        System.out.print("Data de saída (DD/MM/YYYY): ");
-        LocalDate saida = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
-        Reserva reserva = new Reserva(numeroQuarto, chegada, saida);
-        ReservaService reservaService = new ReservaService();
         try {
+            System.out.print("Número do quarto: ");
+            Integer numeroQuarto = scanner.nextInt();
+            System.out.print("Data de chegada (DD/MM/YYYY): ");
+            LocalDate chegada = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
+            System.out.print("Data de saída (DD/MM/YYYY): ");
+            LocalDate saida = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
+            Reserva reserva = new Reserva(numeroQuarto, chegada, saida);
+            ReservaService reservaService = new ReservaService();
+            reservaService.validaReserva(reserva);
             reservaService.imprimeReserva(reserva);
-        } catch (ObjetoNuloException | ReservaException e) {
-            System.err.println(e.getMessage());
-            e.printStackTrace();
-            scanner.close();
-            // Encerra o programa com o status 1 (Erro)
-            System.exit(1);
-        }
-        System.out.println();
-        System.out.println("Digite os dados para atualização da reserva");
-        System.out.print("Data de chegada: ");
-        chegada = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
-        System.out.print("Data de saída: ");
-        saida = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
-        try {
-            reservaService.atualizaDatas(reserva, chegada, saida);
+            System.out.println();
+            System.out.println("Digite os dados para atualização da reserva");
+            System.out.print("Data de chegada: ");
+            chegada = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
+            System.out.print("Data de saída: ");
+            saida = LocalDate.parse(scanner.next(), ExercicioUtils.PADRAO_DATA_BRASIL);
+            reservaService.validaReserva(reserva);
+            reservaService.atualizaDatasReserva(reserva, chegada, saida);
             reservaService.imprimeReserva(reserva);
-        } catch (ObjetoNuloException | ReservaException e) {
-            System.err.println(e.getMessage());
+        } catch (ObjetoNuloException e) {
+            System.out.println(e.getMessage());
             e.printStackTrace();
+        } catch (ReservaException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Erro inesperado !");
+        } finally {
             scanner.close();
-            System.exit(1);
         }
     }
 }
